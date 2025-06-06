@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Nicolas Decoeur</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio de Nicolas Decoeur - Bilingue</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,7 +15,7 @@
             padding: 40px 20px;
         }
 
-        h1, h2 {
+        h1, h2, h3 {
             color: #00ffd9;
         }
 
@@ -36,64 +36,170 @@
             margin-bottom: 1em;
         }
 
-        /* Responsive (adapté mobile) */
+        /* Responsive */
         @media (max-width: 600px) {
             body {
                 padding: 20px 10px;
             }
         }
+
+        /* Gestion des langues */
+        .lang {
+            display: none;
+        }
+
+            .lang.active {
+                display: block;
+            }
+
+        /* Style des boutons */
+        .lang-switch {
+            margin-bottom: 20px;
+        }
+
+            .lang-switch button {
+                background: #00ffd9;
+                border: none;
+                color: #0f0f0f;
+                padding: 8px 16px;
+                margin-right: 10px;
+                font-weight: bold;
+                cursor: pointer;
+                border-radius: 4px;
+                transition: background 0.3s;
+            }
+
+                .lang-switch button:hover {
+                    background: #00cca9;
+                }
     </style>
 </head>
 <body>
-    <h1>Bienvenue !</h1>
-    <p>
-        Je m'appelle <strong>Nicolas Decoeur</strong>, développeur de jeux vidéo passionné par la création d’expériences interactives immersives.<br>
-        Curieux, rigoureux et créatif, je suis toujours en quête de nouveaux défis techniques et artistiques. J’aime apprendre, expérimenter, et collaborer sur des projets ambitieux, qu’ils soient personnels ou en équipe.
-    </p>
-    <p>Ce portfolio regroupe mes prototypes, projets en cours, et différentes expérimentations autour du gameplay et du développement.</p>
 
-    <h2>🛠 Compétences techniques</h2>
-    <ul>
-        <li>Moteurs de jeu : Unity / Unreal Engine</li>
-        <li>Langages : C#, C++</li>
-        <li>Contrôle de version : Git / GitHub, Perforce</li>
-        <li>Outils de développement : Visual Studio, Rider, VS Code</li>
-    </ul>
+    <div class="lang-switch" aria-label="Changer de langue">
+        <button onclick="setLang('fr')" aria-pressed="true" id="btn-fr">FR</button>
+        <button onclick="setLang('en')" aria-pressed="false" id="btn-en">EN</button>
+    </div>
 
-    <h2>🎓 Formation</h2>
-    <p>
-        J’ai suivi un cursus en développement de jeux vidéo au Collège de Bois-de-Boulogne, avec un diplôme en cours de validation.<br>
-        Cette formation m’a permis d’acquérir des bases solides en développement de jeux, gameplay design et programmation orientée objet, notamment sous Unity et Unreal Engine.
-    </p>
+    <!-- Contenu Français -->
+    <div id="fr" class="lang active" lang="fr">
+        <h1>Bienvenue !</h1>
+        <p>
+            Je m'appelle <strong>Nicolas Decoeur</strong>, développeur de jeux vidéo passionné par la création d’expériences interactives immersives.<br />
+            Curieux, rigoureux et créatif, je suis toujours en quête de nouveaux défis techniques et artistiques. J’aime apprendre, expérimenter, et collaborer sur des projets ambitieux, qu’ils soient personnels ou en équipe.
+        </p>
+        <p>Ce portfolio regroupe mes prototypes, projets en cours, et différentes expérimentations autour du gameplay et du développement.</p>
 
-    <section id="game-jams">
-        <h2>🎮 Game Jams</h2>
-        <article>
-            <h3>Neon Grave</h3>
-            <p>
-                Jeu développé en 7 jours dans le cadre de la <strong>Pixel Game Jam 2025</strong>, en collaboration avec une équipe de 3 personnes.<br>
-                J’ai travaillé sur la conception des différents types d’armes ainsi que sur la physique des projectiles.
-            </p>
-            <p>
-                Cette jam a été une excellente opportunité d’apprendre à travailler sous contrainte de temps, à communiquer efficacement en équipe, et à publier un jeu jouable du début à la fin.
-            </p>
-            <p>➡️ <a href="https://legendalex.itch.io/neon-grave" target="_blank" rel="noopener noreferrer">Jouer sur Itch.io</a></p>
-        </article>
-    </section>
+        <h2>🛠 Compétences techniques</h2>
+        <ul>
+            <li>Moteurs de jeu : Unity / Unreal Engine</li>
+            <li>Langages : C#, C++</li>
+            <li>Contrôle de version : Git / GitHub, Perforce</li>
+            <li>Outils de développement : Visual Studio, Rider, VS Code</li>
+        </ul>
 
-    <h2>💡 Compétences complémentaires</h2>
-    <ul>
-        <li>Travail en équipe et communication</li>
-        <li>Organisation et gestion du temps</li>
-        <li>Résolution créative de problèmes</li>
-        <li>Adaptabilité et apprentissage rapide</li>
-    </ul>
+        <h2>🎓 Formation</h2>
+        <p>
+            J’ai suivi un cursus en développement de jeux vidéo au Collège de Bois-de-Boulogne, avec un diplôme en cours de validation.<br />
+            Cette formation m’a permis d’acquérir des bases solides en développement de jeux, gameplay design et programmation orientée objet, notamment sous Unity et Unreal Engine.
+        </p>
 
-    <h2>📫 Me contacter</h2>
-    <ul>
-        <li>✉️  <a href="mailto:nicolas_decoeur@hotmail.com">nicolas_decoeur@hotmail.com</a></li>
-        <li>💼 <a href="https://www.linkedin.com/in/nicolas-décoeur-725bb32b1" target="_blank">LinkedIn</a></li>
-        <li>🎮 <a href="https://nicolasdecoeur.itch.io/" target="_blank">Itch.io</a></li>
-    </ul>
+        <section id="game-jams">
+            <h2>🎮 Game Jams</h2>
+            <article>
+                <h3>Neon Grave</h3>
+                <p>
+                    Jeu développé en 7 jours dans le cadre de la <strong>Pixel Game Jam 2025</strong>, en collaboration avec une équipe de 3 personnes.<br />
+                    J’ai travaillé sur la conception des différents types d’armes ainsi que sur la physique des projectiles.
+                </p>
+                <p>
+                    Cette jam a été une excellente opportunité d’apprendre à travailler sous contrainte de temps, à communiquer efficacement en équipe, et à publier un jeu jouable du début à la fin.
+                </p>
+                <p>➡️ <a href="https://legendalex.itch.io/neon-grave" target="_blank" rel="noopener noreferrer">Jouer sur Itch.io</a></p>
+            </article>
+        </section>
+
+        <h2>💡 Compétences complémentaires</h2>
+        <ul>
+            <li>Travail en équipe et communication</li>
+            <li>Organisation et gestion du temps</li>
+            <li>Résolution créative de problèmes</li>
+            <li>Adaptabilité et apprentissage rapide</li>
+        </ul>
+
+        <h2>📫 Me contacter</h2>
+        <ul>
+            <li>✉️ <a href="mailto:nicolas_decoeur@hotmail.com">nicolas_decoeur@hotmail.com</a></li>
+            <li>💼 <a href="https://www.linkedin.com/in/nicolas-décoeur-725bb32b1" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li>🎮 <a href="https://nicolasdecoeur.itch.io/" target="_blank" rel="noopener noreferrer">Itch.io</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenu Anglais -->
+    <div id="en" class="lang" lang="en">
+        <h1>Welcome!</h1>
+        <p>
+            My name is <strong>Nicolas Decoeur</strong>, a passionate game developer focused on creating immersive interactive experiences.<br />
+            Curious, meticulous, and creative, I am always seeking new technical and artistic challenges. I enjoy learning, experimenting, and collaborating on ambitious projects, whether personal or team-based.
+        </p>
+        <p>This portfolio showcases my prototypes, ongoing projects, and various experiments around gameplay and development.</p>
+
+        <h2>🛠 Technical Skills</h2>
+        <ul>
+            <li>Game Engines: Unity / Unreal Engine</li>
+            <li>Languages: C#, C++</li>
+            <li>Version Control: Git / GitHub, Perforce</li>
+            <li>Development Tools: Visual Studio, Rider, VS Code</li>
+        </ul>
+
+        <h2>🎓 Education</h2>
+        <p>
+            I completed a curriculum in game development at Collège de Bois-de-Boulogne, with a diploma currently in progress.<br />
+            This training allowed me to build a solid foundation in game development, gameplay design, and object-oriented programming, especially with Unity and Unreal Engine.
+        </p>
+
+        <section id="game-jams-en">
+            <h2>🎮 Game Jams</h2>
+            <article>
+                <h3>Neon Grave</h3>
+                <p>
+                    Game developed in 7 days as part of the <strong>Pixel Game Jam 2025</strong>, in collaboration with a team of 3.<br />
+                    I worked on the design of various weapon types as well as the physics of projectiles.
+                </p>
+                <p>
+                    This jam was a great opportunity to learn to work under time constraints, communicate effectively in a team, and release a fully playable game from start to finish.
+                </p>
+                <p>➡️ <a href="https://legendalex.itch.io/neon-grave" target="_blank" rel="noopener noreferrer">Play on Itch.io</a></p>
+            </article>
+        </section>
+
+        <h2>💡 Additional Skills</h2>
+        <ul>
+            <li>Teamwork and communication</li>
+            <li>Organization and time management</li>
+            <li>Creative problem solving</li>
+            <li>Adaptability and fast learning</li>
+        </ul>
+
+        <h2>📫 Contact Me</h2>
+        <ul>
+            <li>✉️ <a href="mailto:nicolas_decoeur@hotmail.com">nicolas_decoeur@hotmail.com</a></li>
+            <li>💼 <a href="https://www.linkedin.com/in/nicolas-décoeur-725bb32b1" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li>🎮 <a href="https://nicolasdecoeur.itch.io/" target="_blank" rel="noopener noreferrer">Itch.io</a></li>
+        </ul>
+    </div>
+
+    <script>
+    function setLang(lang) {
+      document.querySelectorAll('.lang').forEach(div => {
+        div.classList.remove('active');
+      });
+      document.getElementById(lang).classList.add('active');
+
+      // Gestion aria-pressed pour accessibilité
+      document.getElementById('btn-fr').setAttribute('aria-pressed', lang === 'fr');
+      document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
+    }
+    </script>
 </body>
 </html>
